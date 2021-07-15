@@ -1,4 +1,7 @@
 locals {
+  profile = "kevin"
+  region = "ap-northeast-2"
+
   ami = "ami-0b827f3319f7447c6"
   instance_type = "t2.micro"
   key_name = "unicorn-master-key"

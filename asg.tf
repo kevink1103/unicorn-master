@@ -12,8 +12,8 @@ module "asg" {
   desired_capacity          = 1
   wait_for_capacity_timeout = 0
 
-  use_lc    = true
-  create_lc = true
+  use_lt    = true
+  create_lt = true
 
   image_id          = local.ami
   instance_type     = local.instance_type
@@ -25,7 +25,7 @@ module "asg" {
 
   security_groups   = [module.unicorn_instance_sg.security_group_id]
   target_group_arns = module.alb.target_group_arns
-  health_check_type = "EC2"
+  health_check_type = "ELB"
 
   user_data_base64 = base64encode(local.user_data)
 
