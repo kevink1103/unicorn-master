@@ -7,19 +7,18 @@ module "asg" {
 
   vpc_zone_identifier = module.vpc.public_subnets
 
-  min_size                  = 0
+  min_size                  = 1
   max_size                  = 1
   desired_capacity          = 1
   wait_for_capacity_timeout = 0
 
-  use_lt    = true
-  create_lt = true
+  create_asg = true
+  use_lt     = true
+  create_lt  = true
 
   image_id          = local.ami
   instance_type     = local.instance_type
   key_name          = local.key_name
-  ebs_optimized     = true
-  enable_monitoring = true
 
   associate_public_ip_address = true
 
@@ -33,4 +32,8 @@ module "asg" {
     Terraform = "true"
     Project = "unicorn"
   }]
+  tags_as_map = {
+    Terraform = "true"
+    Project = "unicorn"
+  }
 }
