@@ -16,4 +16,9 @@ chmod +x server
 # Reboot if the server crashes
 shutdown -h now
 EOF
+
+  common_tags = {
+    Terraform = "true"
+    Project = "unicorn"
+  }
 }

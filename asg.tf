@@ -28,12 +28,5 @@ module "asg" {
 
   user_data_base64 = base64encode(local.user_data)
 
-  tags = [{
-    Terraform = "true"
-    Project = "unicorn"
-  }]
-  tags_as_map = {
-    Terraform = "true"
-    Project = "unicorn"
-  }
+  tags_as_map = local.common_tags
 }

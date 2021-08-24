@@ -25,8 +25,5 @@ module "alb" {
     },
   ]
 
-  tags = {
-    Terraform = "true"
-    Project = "unicorn"
-  }
+  tags = local.common_tags
 }

@@ -16,8 +16,5 @@ module "ec2_cluster" {
 
   user_data_base64 = base64encode(local.user_data)
 
-  tags = {
-    Terraform = "true"
-    Project   = "unicorn"
-  }
+  tags = local.common_tags
 }

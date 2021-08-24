@@ -9,8 +9,5 @@ module "unicorn_instance_sg" {
   ingress_cidr_blocks = ["0.0.0.0/0"]
   egress_cidr_blocks  = ["0.0.0.0/0"]
 
-  tags = {
-    Terraform = "true"
-    Project = "unicorn"
-  }
+  tags = local.common_tags
 }
